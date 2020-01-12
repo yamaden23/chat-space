@@ -1,1 +1,15 @@
-サイドバー
+.chat-side
+  .side-header
+    .side-box
+      %p.user-name 田中
+      %ul.menu
+        %li.menu__new-group
+          =link_to "#", class: "menu__btn" do
+            %i.fas.fa-edit
+        %li.menu__edit-user
+          =link_to "#", class: "menu__btn" do
+            %i.fas.fa-cog
+  .groups
+    .group
+      %p.group__group-name やまだーず
+      %p.group__latest-message まだメッセージがありません
