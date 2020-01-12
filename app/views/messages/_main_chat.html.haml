@@ -1,1 +1,35 @@
-チャット画面
+.chat-main
+  .main-header
+    .header-leftbox
+      .main-header__left-box
+        %h2.main-header__left-box__current-group
+          ふぁっｆ
+        %ul.main-header__left-box__member-list
+          Member：
+          %li.main-header__left-box__member-list__member やまだ
+    =link_to "#", class: "edit__btn" do
+      .main-header__edit-btn Edit
+      
+  .messages
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker 田中
+        %p.message__upper-info__date 2020/01/11(Sat) 21:23:26
+      %p.message__text こんにちは
+
+    .message
+      .message__upper-info
+        %p.message__upper-info__talker 山本
+        %p.message__upper-info__date 2020/01/11(fry) 20:23:26
+      %p.message__text ハロー
+
+
+  
+  .form
+    %form.new-message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder:"type a message"}        
+        %label{class: "input-box__image"}
+          =icon('fas','image')
+          %input{type:"file",class:"input-box__image__file"}
+      %input{type:"submit",class:"submit-btn"}
