@@ -11,7 +11,9 @@
             - @group.users.each do |user|
               %span.main-header__user #{user.name}
             -# =link_to edit_group_path(current_user) do
-        .main-header__edit-btn Edit           
+        .main-header__edit-btn edit
+        -#= link_to 'Edit' , edit_group_path(@edit_group), class: 'main-header__edit-btn'
+          
       
   .messages
     = render @messages
