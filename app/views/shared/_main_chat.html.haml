@@ -19,8 +19,17 @@
   .form
     .input-box
       = form_for [@group, @message] do |f|
-        -# = f.text_field{type: "text", class: "input-box__text", placeholder:"type   amessage"}        
-        = f.label :image, class: "input-box__image" do
-          =icon('fas','image')
-          -# = f.input{type:"file",class:"input-box__image__file"}
-        -# = f.input{type:"submit",class:"submit-btn"}
+        -# = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+         .form__mask
+           = f.label :image, class: 'form__mask__image' do
+             = icon('fas', 'image', class: 'icon')
+             = f.file_field :image, class: 'hidden'
+         = f.submit 'Send', class: 'form__submit'
+
+             -#  = form_for [@group, @message] do |f|
+    -#    -# = f.text_field{type: "text", class: "input-box__text", placeholder:"type   amessage"}        
+    -#    = f.label :image, class: "input-box__image" do
+    -#      =icon('fas','image')
+    -#      -# = f.input{type:"file",class:"input-box__image__file"}
+    -#    -# = f.input{type:"submit",class:"submit-btn"}
+    -#    = f.submit{type:"submit",class:"submit-btn"}
