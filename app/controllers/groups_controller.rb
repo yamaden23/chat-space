@@ -23,7 +23,9 @@ before_action :set_group, only: [:edit, :update]
 
   def update
     if @group.update(group_params)
-      redirect_to root_path, notice: 'グループを更新しました'
+      # redirect_to root_path,notice: 'グループを更新しました'
+      #redirect_to :back,notice: 'グループを更新しました'
+      redirect_to group_messages_path(@group),notice: 'グループを更新しました'
     else
       render :edit
     end
