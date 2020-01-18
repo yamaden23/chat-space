@@ -20,6 +20,7 @@ $(function(){
        </div>`
      return html;
    } else {
+     console.log(message.created_at);
      var html =
       `<div class="message" data-message-id=${message.id}>
          <div class="upper-message">
@@ -27,7 +28,7 @@ $(function(){
              ${message.user_name}
            </div>
            <div class="upper-message__date">
-             ${message.date}
+             ${message.created_at}
            </div>
          </div>
          <div class="lower-message">
@@ -58,6 +59,9 @@ $('#new_message').on('submit', function(e){
     $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
     $('.form__submit').attr('disabled', false);
   })
+  .fail(function() {
+    alert("メッセージ送信に失敗しました");
+});
 })
 });
 
