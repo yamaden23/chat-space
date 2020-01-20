@@ -1,6 +1,6 @@
 $(function(){ 
   
-  console.log(last_message_id);
+  // console.log(last_message_id);
   var buildHTML = function(message) {
     if (message.content && message.image) {
       //data-idが反映されるようにしている
@@ -80,6 +80,7 @@ $('#new_message').on('submit', function(e){
 })
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
+    console.log("ok!");
     last_message_id = $('.message:last').data("message-id");
     $.ajax({
       //ルーティングで設定した通りのURLを指定
@@ -108,8 +109,9 @@ $('#new_message').on('submit', function(e){
     .fail(function() {
       console.log('error');
       if (document.location.href.match(/\/groups\/\d+\/messages/)) {
-      setInterval(reloadMessages, 7000);
+      
       }
     });
    };
+   setInterval(reloadMessages, 7000);
   });

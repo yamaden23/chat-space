@@ -30,6 +30,7 @@ $(function() {
     $(`#${userId}`).append(html);
   }
   $("#user-search-field").on("keyup", function() {
+    console.log(1)
     let input = $("#user-search-field").val();
     $.ajax({
       type: "GET",
