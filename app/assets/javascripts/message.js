@@ -104,7 +104,7 @@ $('#new_message').on('submit', function(e){
       }
     })
     .fail(function() {
-      console.log('alert');
+        alert('失敗');
     });
    };
    setInterval(reloadMessages, 7000);
