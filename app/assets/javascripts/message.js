@@ -103,9 +103,7 @@ $('#new_message').on('submit', function(e){
       $(".form__submit").prop("disabled", false);
       }
     })
-    .fail(function() {
-        alert('失敗');
-    });
+
    };
    setInterval(reloadMessages, 7000);
   });
