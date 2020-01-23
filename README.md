@@ -9,31 +9,31 @@ Things you may want to cover:
 - belongs_to :group
 - belongs_to :user
 
-## usersテーブル
+### usersテーブル
 |column|Type|Optinons|
 |------|----|--------|
 |neme|string|--------|
 |email|string|null: false|
-### Asaociation
+### Asaociation
 - has_many :groups,through: :groups_users
 - has_many :messages
 - has_many :groups_users
 
-## groupsテーブル
+## groupsテーブル
 |column|Type|Optinons|
 |------|----|--------|
 |neme|string|null: false|
-### Association
+### Association
 - has_many :users,through: :groups_users
 - has_many :messages
 - has_many :groups_users
 
-## groups_userテーブル
+## groups_userテーブル
 |column|Type|Optinons|
 |------|----|--------|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
-### Association
+### Association
 - belongs_to :group
 - belongs_to :user
 
@@ -47,3 +47,5 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+
