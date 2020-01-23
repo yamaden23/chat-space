@@ -5,7 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-### Associate
+## Associate
 - belongs_to :group
 - belongs_to :user
 
